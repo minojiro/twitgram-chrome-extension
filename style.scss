@@ -1,0 +1,69 @@
+.twitgram-toggle {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  z-index: 100000;
+}
+
+.twitgram-toggle:checked ~ div {
+  article[role="article"] {
+    // tweet-wrap
+    > div > div > div > div:not([data-testid="tweet"]) {
+      // retweeted or liked message
+      display: none;
+    }
+  }
+
+  [data-testid="tweet"] {
+    // tweet
+    > :first-child {
+      // avatar
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 23px;
+    }
+    > :last-child {
+      padding-bottom: 0;
+    }
+    > :last-child > :first-child {
+      // name line
+      top: 10px;
+      left: 31px;
+      position: absolute;
+    }
+    [lang] {
+      // tweet text
+      display: none;
+    }
+    > :last-child > :last-child > :nth-child(2) {
+      // media
+      padding-top: 30px;
+      &:empty {
+        display: none;
+        + div {
+          display: none;
+        }
+      }
+    }
+    > :last-child > :last-child > :last-child {
+      padding-bottom: 10px;
+    }
+  }
+
+  [data-testid="unretweet"],
+  [data-testid="unlike"],
+  [data-testid="reply"],
+  [data-testid="retweet"],
+  [data-testid="like"] {
+    > div > :last-child {
+      // reaction count number
+      display: none;
+    }
+  }
+
+  [data-testid="sidebarColumn"] [role="region"] {
+    // trend
+    display: none;
+  }
+}

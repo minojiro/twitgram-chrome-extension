@@ -1,0 +1,15 @@
+{
+  "name": "twitgram",
+  "version": "1.0.0",
+  "description": "Twitter のタイムラインからテキストのみのツイートを隠し、画像や動画などのメディアの閲覧に集中できるようにする Chrome 拡張",
+  "main": "main.js",
+  "scripts": {
+    "build": "sass style.scss style.css --no-source-map --style=compressed",
+    "watch": "sass style.scss style.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.30.0"
+  }
+}
